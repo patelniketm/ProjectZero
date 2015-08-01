@@ -1,3 +1,7 @@
+# IDE Workspace
+/.idea/workspace.xml
+/.idea/libraries
+
 # Built application files
 *.apk
 *.ap_
@@ -25,3 +29,7 @@ proguard/
 
 # Log Files
 *.log
+/captures
+
+# Mac
+.DS_Store
