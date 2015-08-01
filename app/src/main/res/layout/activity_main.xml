@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/my_title"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/btnMovie"
+        style="@style/dashBtns"
+        android:elevation="10dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:onClick="onMovie"
+        android:text="@string/spotify_streamer" />
+
+    <Button
+        android:id="@+id/btnScores"
+        style="@style/dashBtns"
+        android:layout_below="@+id/btnMovie"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:onClick="onScores"
+        android:text="@string/scores_app" />
+
+    <Button
+        android:id="@+id/btnLibrary"
+        style="@style/dashBtns"
+        android:layout_below="@+id/btnScores"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:onClick="onLibrary"
+        android:text="@string/library_app" />
+
+    <Button
+        android:id="@+id/btnBuildItBigger"
+        style="@style/dashBtns"
+        android:layout_below="@+id/btnLibrary"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:onClick="onBuildItBigger"
+        android:text="@string/build_it_bigger" />
+
+    <Button
+        android:id="@+id/btnBaconReader"
+        style="@style/dashBtns"
+        android:layout_below="@+id/btnBuildItBigger"
+        android:layout_centerHorizontal="true"
+        android:focusableInTouchMode="false"
+        android:onClick="onBaconReader"
+        android:text="@string/bacon_rader" />
+
+    <Button
+        android:id="@+id/btnCapstone"
+        style="@style/dashBtns"
+        android:layout_below="@+id/btnBaconReader"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_red_dark"
+        android:focusableInTouchMode="false"
+        android:onClick="onCapstone"
+        android:text="@string/capstone_my_own_app" />
+
+
+</RelativeLayout>
