@@ -28,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:focusableInTouchMode="false"
         android:onClick="onMovie"
-        android:text="@string/spotify_streamer" />
+        android:text="@string/popular_movies" />
 
     <Button
         android:id="@+id/btnScores"
