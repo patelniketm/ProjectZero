@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_padding"
+    android:background="@android:color/white"
+    tools:context="edu.udacity.nanodegree.MovieDetailActivityFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/movie_thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingBottom="@dimen/activity_padding"
+                android:src="@drawable/movie_thumbnail" />
+
+            <!--<TextView-->
+                <!--android:id="@+id/movie_trailer"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/movie_thumbnail"-->
+                <!--android:layout_above="@id/movie_name"-->
+                <!--android:paddingBottom="@dimen/activity_padding"-->
+                <!--android:textColor="@android:color/white" />-->
+
+            <TextView
+                android:id="@+id/movie_name"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movie_thumbnail"
+                android:paddingBottom="@dimen/activity_padding" />
+
+            <TextView
+                android:id="@+id/movie_overview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movie_name"
+                android:paddingBottom="@dimen/activity_padding" />
+
+            <TextView
+                android:id="@+id/movie_release_date"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movie_overview"
+                android:paddingBottom="@dimen/activity_padding" />
+
+            <TextView
+                android:id="@+id/movie_vote_average"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movie_release_date"
+                android:paddingBottom="@dimen/activity_padding" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

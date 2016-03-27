@@ -1,25 +1,66 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "edu.udacity.nanodegree"
         minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 23
+        versionCode System.getenv("VERSION_CODE") as Integer ?: 2
+        versionName System.getenv("VERSION_NAME") as String ?: "0.1.2"
+        multiDexEnabled true
+
+        //TODO Define your MOVIE API KEY as environment to run this project
+        buildConfigField 'String', 'MOVIE_API_KEY', "\"$System.env.MOVIE_API_KEY\""
+        buildConfigField 'String', 'MOVIE_BASE_URL', "\"http://api.themoviedb.org/3/\""
+
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
     buildTypes {
+        debug{
+            debuggable true
+            minifyEnabled false
+        }
         release {
+            //TODO Proguard
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp:2.2.0'
+
+    compile group: 'info.movito', name: 'themoviedbapi', version: '1.1'
+//  compile 'com.omertron:themoviedbapi:3.7'
+
+//  compile fileTree(dir: 'libs', include: ['*.jar'])
+//  compile 'org.slf4j:slf4j-simple:1.6.1'
+//  compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0'
+//  compile 'org.apache.commons:commons-lang3:3.0'
+//  compile 'org.yamj:api-common:1.0'
+
 }
