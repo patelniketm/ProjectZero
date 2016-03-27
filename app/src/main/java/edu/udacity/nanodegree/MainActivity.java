@@ -1,7 +1,8 @@
 package edu.udacity.nanodegree;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,7 +40,8 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void onMovie(View v){
-        Toast.makeText(getApplicationContext(),"On Movies",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this,MovieActivity.class);
+        startActivity(intent);
     }
 
     public void onScores(View v){
